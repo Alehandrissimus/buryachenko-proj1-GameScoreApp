@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">buryachenko-proj1-GameScoreApp</string>
+    <string name="team_score_template">Score: %1$d</string>
+    <string name="cancel">Cancel</string>
+    <string name="minutes">Minutes</string>
+    <string name="start">Start</string>
+    <string name="insert_match_time">Insert Match Time</string>
+    <string name="team_2_title">Team 2 Title</string>
+    <string name="insert_team_2">Insert Team 2</string>
+    <string name="team_1_title">Team 1 Title</string>
+    <string name="insert_team_1">Insert Team 1</string>
+    <string name="match_results">Match Results</string>
+    <string name="continuee">Continue</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="score_0">Score: 0</string>
+    <string name="add_point">Add point</string>
+    <string name="return_to_menu">Return to Menu</string>
+    <string name="share_results">Share results</string>
+    <string name="time_left">Time left</string>
+    <string name="pause">Pause</string>
+    <string name="winner">Winner</string>
+    <string name="loser">Loser</string>
+    <string name="tie">tie</string>
+    <string name="leaderboards">Leaderboards</string>
+    <string name="game_score_app">Game Score App</string>
+</resources>

@@ -13,18 +13,14 @@ class LeaderboardActivity : AppCompatActivity() {
 
     companion object {
 
-        private const val SCORE_KEY = "SCORE_KEY"
-
         fun start(context: Context) {
             val intent = Intent(context, LeaderboardActivity::class.java)
             context.startActivity(intent)
         }
 
-        fun start(context: Context, score: Score) {
+        fun startWithFlags(context: Context) {
             val intent = Intent(context, LeaderboardActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-            intent.putExtra(SCORE_KEY, score)
             context.startActivity(intent)
         }
     }
@@ -32,10 +28,6 @@ class LeaderboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leaderboards)
-
-        val score = intent.getParcelableExtra<Score>(SCORE_KEY)
-        score?.also { ScoreData.list.add(it) }
-
         setupRecycleView()
         setupListeners()
     }

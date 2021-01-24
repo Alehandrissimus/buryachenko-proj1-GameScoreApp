@@ -29,6 +29,7 @@ class WinnerActivity : AppCompatActivity() {
         data?.also {
             setupData(it)
             setupListeners(it)
+            ScoreData.list.add(it)
         }
     }
 
@@ -97,7 +98,7 @@ class WinnerActivity : AppCompatActivity() {
         }
 
         winner_button_continue.setOnClickListener {
-            LeaderboardActivity.start(this, data)
+            LeaderboardActivity.startWithFlags(this)
             finish()
         }
     }

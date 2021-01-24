@@ -31,32 +31,27 @@ class LeaderboardRecycleAdapter(
     inner class LeaderBoardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(score: Score) {
-            val score1 = "Score: ${score.team1Score}"
-            val score2 = "Score: ${score.team2Score}"
-            val winner = "Winner"
-            val loser = "Loser"
-            val tie = "Tie"
             itemView.recycle_textView_team1.text = score.team1
             itemView.recycle_textView_team2.text = score.team2
-            itemView.recycle_textView_team1Score.text = score1
-            itemView.recycle_textView_team2Score.text = score2
+            itemView.recycle_textView_team1Score.text = itemView.resources.getString(R.string.team_score_template, score.team1Score)
+            itemView.recycle_textView_team2Score.text = itemView.resources.getString(R.string.team_score_template, score.team2Score)
             when {
                 score.team1Score > score.team2Score -> {
-                    itemView.recycle_textView_team1Tag.text = winner
+                    itemView.recycle_textView_team1Tag.text = itemView.resources.getString(R.string.winner)
                     itemView.recycle_textView_team1Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.green))
-                    itemView.recycle_textView_team2Tag.text = loser
+                    itemView.recycle_textView_team2Tag.text = itemView.resources.getString(R.string.loser)
                     itemView.recycle_textView_team2Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.red))
                 }
                 score.team1Score < score.team2Score -> {
-                    itemView.recycle_textView_team1Tag.text = winner
+                    itemView.recycle_textView_team1Tag.text = itemView.resources.getString(R.string.loser)
                     itemView.recycle_textView_team1Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.red))
-                    itemView.recycle_textView_team2Tag.text = loser
+                    itemView.recycle_textView_team2Tag.text = itemView.resources.getString(R.string.winner)
                     itemView.recycle_textView_team2Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.green))
                 }
                 score.team1Score == score.team2Score -> {
-                    itemView.recycle_textView_team1Tag.text = tie
+                    itemView.recycle_textView_team1Tag.text = itemView.resources.getString(R.string.tie)
                     itemView.recycle_textView_team1Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.stock_text))
-                    itemView.recycle_textView_team2Tag.text = tie
+                    itemView.recycle_textView_team2Tag.text = itemView.resources.getString(R.string.tie)
                     itemView.recycle_textView_team2Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.stock_text))
                 }
             }

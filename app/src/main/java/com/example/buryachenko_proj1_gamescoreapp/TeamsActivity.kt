@@ -24,21 +24,21 @@ class TeamsActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        teams_button_cancel.setOnClickListener {
+        teamsButtonCancel.setOnClickListener {
             this.finish()
         }
 
         val textWatcher = object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                val team1 = teams_edittext_team1.text.toString()
-                val team2 = teams_edittext_team2.text.toString()
-                val time = teams_edittext_time.text.toString()
+                val team1 = teamsEditText1.text.toString()
+                val team2 = teamsEditText2.text.toString()
+                val time = teamsEditTextTime.text.toString()
 
-                teams_button_start.isEnabled =
+                teamsButtonStart.isEnabled =
                     team1.isNotEmpty() && team2.isNotEmpty() && time.isNotEmpty()
 
                 if (team1.isEmpty() || team2.isEmpty() || time.isEmpty()) {
-                    teams_button_start.isEnabled = false
+                    teamsButtonStart.isEnabled = false
                 }
             }
 
@@ -46,14 +46,14 @@ class TeamsActivity : AppCompatActivity() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
         }
-        teams_edittext_team1.addTextChangedListener(textWatcher)
-        teams_edittext_team2.addTextChangedListener(textWatcher)
-        teams_edittext_time.addTextChangedListener(textWatcher)
+        teamsEditText1.addTextChangedListener(textWatcher)
+        teamsEditText2.addTextChangedListener(textWatcher)
+        teamsEditTextTime.addTextChangedListener(textWatcher)
 
-        teams_button_start.setOnClickListener {
-            val time = teams_edittext_time.text.toString().toInt()
-            val team1 = teams_edittext_team1.text.toString()
-            val team2 = teams_edittext_team2.text.toString()
+        teamsButtonStart.setOnClickListener {
+            val time = teamsEditTextTime.text.toString().toInt()
+            val team1 = teamsEditText1.text.toString()
+            val team2 = teamsEditText2.text.toString()
             ScoreActivity.start(this, time, team1, team2)
         }
     }

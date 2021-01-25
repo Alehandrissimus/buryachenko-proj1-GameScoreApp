@@ -33,41 +33,41 @@ class WinnerActivity : AppCompatActivity() {
     }
 
     private fun setupData(data: Score) {
-        winner_textView_team1.text = data.team1
-        winner_textView_team2.text = data.team2
-        winner_textView_team1Score.text =
+        winnerTextViewTeam1.text = data.team1
+        winnerTextViewTeam2.text = data.team2
+        winnerTextViewTeam1Score.text =
             resources.getString(R.string.team_score_template, data.team1Score)
-        winner_textView_team2Score.text =
+        winnerTextViewTeam2Score.text =
             resources.getString(R.string.team_score_template, data.team2Score)
         when {
             data.team1Score > data.team2Score -> {
-                winner_textView_team1Tag.text = getString(R.string.winner)
-                winner_textView_team1Tag.setTextColor(ContextCompat.getColor(this, R.color.green))
-                winner_textView_team2Tag.text = getString(R.string.loser)
-                winner_textView_team2Tag.setTextColor(ContextCompat.getColor(this, R.color.red))
+                winnerTextTeam1Tag.text = getString(R.string.winner)
+                winnerTextTeam1Tag.setTextColor(ContextCompat.getColor(this, R.color.green))
+                winnerTextViewTeam2Tag.text = getString(R.string.loser)
+                winnerTextViewTeam2Tag.setTextColor(ContextCompat.getColor(this, R.color.red))
             }
             data.team1Score < data.team2Score -> {
-                winner_textView_team1Tag.text = getString(R.string.loser)
-                winner_textView_team1Tag.setTextColor(ContextCompat.getColor(this, R.color.red))
-                winner_textView_team2Tag.text = getString(R.string.winner)
-                winner_textView_team2Tag.setTextColor(ContextCompat.getColor(this, R.color.green))
+                winnerTextTeam1Tag.text = getString(R.string.loser)
+                winnerTextTeam1Tag.setTextColor(ContextCompat.getColor(this, R.color.red))
+                winnerTextViewTeam2Tag.text = getString(R.string.winner)
+                winnerTextViewTeam2Tag.setTextColor(ContextCompat.getColor(this, R.color.green))
             }
             else -> {
-                winner_textView_team1Tag.text = getString(R.string.tie)
-                winner_textView_team2Tag.text = getString(R.string.tie)
+                winnerTextTeam1Tag.text = getString(R.string.tie)
+                winnerTextViewTeam2Tag.text = getString(R.string.tie)
             }
         }
     }
 
     private fun setupListeners(data: Score) {
-        winner_button_cancel.setOnClickListener {
+        winnerButtonCancel.setOnClickListener {
             val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
         }
 
-        winner_button_share.setOnClickListener {
+        winnerButtonShare.setOnClickListener {
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_SUBJECT, "Subject line")
@@ -96,7 +96,7 @@ class WinnerActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(sendIntent, "Share using"))
         }
 
-        winner_button_continue.setOnClickListener {
+        winnerButtonContinue.setOnClickListener {
             LeaderboardActivity.start(this, data)
             finish()
         }

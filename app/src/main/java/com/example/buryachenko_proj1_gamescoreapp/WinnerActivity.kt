@@ -29,6 +29,7 @@ class WinnerActivity : AppCompatActivity() {
         data?.also {
             setupData(it)
             setupListeners(it)
+            ScoreData.list.add(it)
         }
     }
 
@@ -70,7 +71,7 @@ class WinnerActivity : AppCompatActivity() {
         winnerButtonShare.setOnClickListener {
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_SUBJECT, "Subject line")
+                putExtra(Intent.EXTRA_SUBJECT, "Match results")
                 when {
                     data.team1Score > data.team2Score -> {
                         putExtra(
@@ -97,7 +98,7 @@ class WinnerActivity : AppCompatActivity() {
         }
 
         winnerButtonContinue.setOnClickListener {
-            LeaderboardActivity.start(this, data)
+            LeaderboardActivity.startWithFlags(this)
             finish()
         }
     }

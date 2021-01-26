@@ -23,8 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="team1 tag" />
 
             <TextView
@@ -32,8 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:textSize="24sp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="TEAM 1 NAME" />
 
             <TextView
@@ -41,9 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/score_0"
-                android:textSize="24sp" />
+                android:textSize="@dimen/textsize_medium" />
 
         </LinearLayout>
 
@@ -60,9 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="team2 tag" />
 
             <TextView
@@ -70,8 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:textSize="24sp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="TEAM 2 NAME" />
 
             <TextView
@@ -79,21 +78,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/score_0"
-                android:textSize="24sp" />
+                android:textSize="@dimen/textsize_medium" />
 
         </LinearLayout>
 
         <ImageButton
             android:id="@+id/recycleButtonRemove"
-            android:layout_width="50dp"
-            android:layout_height="51dp"
+            android:layout_width="47dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:src="@mipmap/ic_clear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/removebutton" />
 
     </LinearLayout>
 

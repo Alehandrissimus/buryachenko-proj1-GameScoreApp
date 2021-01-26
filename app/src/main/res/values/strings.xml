@@ -23,4 +23,6 @@
     <string name="tie">Tie</string>
     <string name="leaderboards">Leaderboards</string>
     <string name="game_score_app">Game Score App</string>
+    <string name="sortbutton">sortbutton</string>
+    <string name="removebutton">removebutton</string>
 </resources>

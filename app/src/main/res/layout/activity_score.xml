@@ -9,7 +9,7 @@
         android:id="@+id/scoreButtonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_margin="@dimen/margin_small"
         android:text="@string/cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,9 +18,9 @@
         android:id="@+id/scoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="72dp"
+        android:layout_margin="@dimen/margin_exbig"
         android:text="@string/time_left"
-        android:textSize="24sp"
+        android:textSize="@dimen/textsize_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,8 +29,8 @@
         android:id="@+id/scoreTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:textSize="36sp"
+        android:layout_margin="@dimen/margin_small"
+        android:textSize="@dimen/textsize_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreTextView"
@@ -40,10 +40,10 @@
         android:id="@+id/scoreButtonPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="@dimen/margin_big"
         android:enabled="false"
         android:text="@string/pause"
-        android:textSize="20sp"
+        android:textSize="@dimen/textsize_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreTimeTextView" />
@@ -51,9 +51,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="@dimen/margin_exbig"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/scoreButtonPause">
+        app:layout_constraintTop_toBottomOf="@id/scoreButtonPause"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -66,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="24sp"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="TEAM 1 NAME" />
 
             <Button
@@ -74,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:enabled="false"
                 android:text="@string/add_point" />
 
@@ -83,9 +84,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/score_0"
-                android:textSize="24sp" />
+                android:textSize="@dimen/textsize_medium" />
 
         </LinearLayout>
 
@@ -102,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="24sp"
+                android:textSize="@dimen/textsize_medium"
                 tools:text="TEAM 2 NAME" />
 
             <Button
@@ -110,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:enabled="false"
                 android:text="@string/add_point" />
 
@@ -119,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/score_0"
                 android:textSize="24sp" />
 
@@ -131,9 +132,9 @@
         android:id="@+id/scoreButtonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="48dp"
+        android:layout_margin="@dimen/margin_big"
         android:text="@string/start_timer"
-        android:textSize="16sp"
+        android:textSize="@dimen/textsize_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -142,9 +143,9 @@
         android:id="@+id/scoreButtonContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="48dp"
+        android:layout_margin="@dimen/margin_big"
         android:text="@string/continuee"
-        android:textSize="16sp"
+        android:textSize="@dimen/textsize_small"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

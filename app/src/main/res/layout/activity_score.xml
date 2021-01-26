@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/score_cancel"
+        android:id="@+id/scoreButtonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/score_textView"
+        android:id="@+id/scoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="72dp"
@@ -26,18 +26,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/score_time"
+        android:id="@+id/scoreTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score_textView"
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView"
         tools:text="TIME" />
 
     <Button
-        android:id="@+id/score_button_pause"
+        android:id="@+id/scoreButtonPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -46,14 +46,14 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score_time" />
+        app:layout_constraintTop_toBottomOf="@+id/scoreTimeTextView" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/score_button_pause">
+        app:layout_constraintTop_toBottomOf="@id/scoreButtonPause">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -62,7 +62,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/score_textView_team1"
+                android:id="@+id/scoreTextViewTeam1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -70,7 +70,7 @@
                 tools:text="TEAM 1 NAME" />
 
             <Button
-                android:id="@+id/score_button_addScore1"
+                android:id="@+id/scoreButtonAddScore1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -79,7 +79,7 @@
                 android:text="@string/add_point" />
 
             <TextView
-                android:id="@+id/score_textView_team1Score"
+                android:id="@+id/scoreTextViewTeam1Score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -90,16 +90,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/score_time">
+            app:layout_constraintTop_toBottomOf="@+id/scoreTimeTextView">
 
             <TextView
-                android:id="@+id/score_textView_team2"
+                android:id="@+id/scoreTextViewTeam2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -107,7 +106,7 @@
                 tools:text="TEAM 2 NAME" />
 
             <Button
-                android:id="@+id/score_button_addScore2"
+                android:id="@+id/scoreButtonAddScore2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -116,7 +115,7 @@
                 android:text="@string/add_point" />
 
             <TextView
-                android:id="@+id/score_textView_team2Score"
+                android:id="@+id/scoreTextViewTeam2Score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -129,7 +128,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/score_start"
+        android:id="@+id/scoreButtonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="48dp"
@@ -140,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/score_button_continue"
+        android:id="@+id/scoreButtonContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="48dp"

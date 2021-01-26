@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -20,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/recycle_textView_team1Tag"
+                android:id="@+id/recycleTextViewTeam1Tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -29,7 +28,7 @@
                 tools:text="team1 tag" />
 
             <TextView
-                android:id="@+id/recycle_textView_team1"
+                android:id="@+id/recycleTextViewTeam1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -38,7 +37,7 @@
                 tools:text="TEAM 1 NAME" />
 
             <TextView
-                android:id="@+id/recycle_textView_team1Score"
+                android:id="@+id/recycleTextViewTeam1Score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -49,16 +48,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/score_time">
+            app:layout_constraintTop_toBottomOf="@+id/scoreTimeTextView">
 
             <TextView
-                android:id="@+id/recycle_textView_team2Tag"
+                android:id="@+id/recycleTextViewTeam2Tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,7 +66,7 @@
                 tools:text="team2 tag" />
 
             <TextView
-                android:id="@+id/recycle_textView_team2"
+                android:id="@+id/recycleTextViewTeam2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -77,7 +75,7 @@
                 tools:text="TEAM 2 NAME" />
 
             <TextView
-                android:id="@+id/recycle_textView_team2Score"
+                android:id="@+id/recycleTextViewTeam2Score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -88,7 +86,7 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/recycle_button"
+            android:id="@+id/recycleButtonRemove"
             android:layout_width="50dp"
             android:layout_height="51dp"
             android:layout_gravity="center_vertical"

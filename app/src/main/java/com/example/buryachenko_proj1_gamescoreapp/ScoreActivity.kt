@@ -43,48 +43,48 @@ class ScoreActivity : AppCompatActivity() {
     private fun setupListeners() {
         timeLeft = ((intent.getIntExtra(TIME_KEY, 1)) * 60).toLong()
 
-        score_cancel.setOnClickListener {
+        scoreButtonCancel.setOnClickListener {
             timer?.cancel()
             this.finish()
         }
-        score_start.setOnClickListener {
-            score_button_addScore1.isEnabled = true
-            score_button_addScore2.isEnabled = true
-            score_start.isEnabled = false
-            score_button_pause.isEnabled = true
+        scoreButtonStart.setOnClickListener {
+            scoreButtonAddScore1.isEnabled = true
+            scoreButtonAddScore2.isEnabled = true
+            scoreButtonStart.isEnabled = false
+            scoreButtonPause.isEnabled = true
             setupTimer()
         }
 
         var team1Score = 0
         var team2Score = 0
-        score_button_addScore1.setOnClickListener {
+        scoreButtonAddScore1.setOnClickListener {
             team1Score += 1
-            score_textView_team1Score.text =
+            scoreTextViewTeam1Score.text =
                 resources.getString(R.string.team_score_template, team1Score)
         }
-        score_button_addScore2.setOnClickListener {
+        scoreButtonAddScore2.setOnClickListener {
             team2Score += 1
-            score_textView_team2Score.text =
+            scoreTextViewTeam2Score.text =
                 resources.getString(R.string.team_score_template, team2Score)
         }
 
-        score_button_pause.setOnClickListener {
+        scoreButtonPause.setOnClickListener {
             if (!timerIsPaused) {
                 timerIsPaused = true
-                score_button_pause.isEnabled = false
-                score_button_addScore1.isEnabled = false
-                score_button_addScore2.isEnabled = false
-                score_button_pause.text = getString(R.string.continuee)
+                scoreButtonPause.isEnabled = false
+                scoreButtonAddScore1.isEnabled = false
+                scoreButtonAddScore2.isEnabled = false
+                scoreButtonPause.text = getString(R.string.continuee)
             } else {
                 timerIsPaused = false
-                score_button_addScore1.isEnabled = true
-                score_button_addScore2.isEnabled = true
+                scoreButtonAddScore1.isEnabled = true
+                scoreButtonAddScore2.isEnabled = true
                 setupTimer()
-                score_button_pause.text = getString(R.string.pause)
+                scoreButtonPause.text = getString(R.string.pause)
             }
         }
 
-        score_button_continue.setOnClickListener {
+        scoreButtonContinue.setOnClickListener {
             val time = intent.getIntExtra(TIME_KEY, 1)
             val team1 = intent.getStringExtra(TEAM1_KEY)
             val team2 = intent.getStringExtra(TEAM2_KEY)
@@ -103,18 +103,18 @@ class ScoreActivity : AppCompatActivity() {
                     updateUI(millisUntilFinished)
                 } else {
                     timeLeft = millisUntilFinished / 1000
-                    score_button_pause.isEnabled = true
+                    scoreButtonPause.isEnabled = true
                     cancel()
                 }
             }
 
             override fun onFinish() {
                 Toast.makeText(this@ScoreActivity, "Finished", Toast.LENGTH_LONG).show()
-                score_start.visibility = View.GONE
-                score_button_continue.visibility = View.VISIBLE
-                score_button_addScore1.isEnabled = false
-                score_button_addScore2.isEnabled = false
-                score_button_pause.isEnabled = false
+                scoreButtonStart.visibility = View.GONE
+                scoreButtonContinue.visibility = View.VISIBLE
+                scoreButtonAddScore1.isEnabled = false
+                scoreButtonAddScore2.isEnabled = false
+                scoreButtonPause.isEnabled = false
             }
         }.start()
     }
@@ -125,10 +125,10 @@ class ScoreActivity : AppCompatActivity() {
         val team2 = intent.getStringExtra(TEAM2_KEY)
 
         val seconds = (time * 60) % 60
-        score_time.text = String.format("%d:%02d", time, seconds)
+        scoreTimeTextView.text = String.format("%d:%02d", time, seconds)
 
-        score_textView_team1.text = team1
-        score_textView_team2.text = team2
+        scoreTextViewTeam1.text = team1
+        scoreTextViewTeam2.text = team2
     }
 
     private fun updateUI(millisUntilFinished: Long) {
@@ -136,6 +136,6 @@ class ScoreActivity : AppCompatActivity() {
         val minutes = seconds / 60
         seconds %= 60
 
-        score_time.text = String.format("%d:%02d", minutes, seconds)
+        scoreTimeTextView.text = String.format("%d:%02d", minutes, seconds)
     }
 }

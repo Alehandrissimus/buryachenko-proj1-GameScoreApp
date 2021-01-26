@@ -38,26 +38,26 @@ class LeaderboardActivity : AppCompatActivity() {
     }
 
     private fun setupRecycleView() {
-        leaderboards_recycle_container.adapter = LeaderboardRecycleAdapter({
+        leaderboardRecycleContainer.adapter = LeaderboardRecycleAdapter({
             removingItem(it)
         }, ScoreData.list)
 
-        leaderboards_recycle_container.layoutManager =
+        leaderboardRecycleContainer.layoutManager =
             LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
 
-        leaderboards_recycle_container.addItemDecoration(
+        leaderboardRecycleContainer.addItemDecoration(
             DividerItemDecoration(applicationContext, RecyclerView.VERTICAL)
         )
     }
 
     private fun removingItem(position: Int) {
         ScoreData.list.removeAt(position)
-        leaderboards_recycle_container.adapter?.notifyDataSetChanged()
+        leaderboardRecycleContainer.adapter?.notifyDataSetChanged()
     }
 
     private fun setupListeners() {
         var isSorted = false
-        leaderboards_button_sort.setOnClickListener {
+        leaderboardsButtonSort.setOnClickListener {
             if (!isSorted) {
                 ScoreData.list.sortBy { it.team1Score + it.team2Score }
                 isSorted = true
@@ -65,7 +65,7 @@ class LeaderboardActivity : AppCompatActivity() {
                 ScoreData.list.sortByDescending { it.team1Score + it.team2Score }
                 isSorted = false
             }
-            leaderboards_recycle_container.adapter?.notifyDataSetChanged()
+            leaderboardRecycleContainer.adapter?.notifyDataSetChanged()
         }
     }
 

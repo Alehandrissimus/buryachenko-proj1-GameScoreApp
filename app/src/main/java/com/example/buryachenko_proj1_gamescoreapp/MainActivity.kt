@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        main_button_start.setOnClickListener {
+        mainButtonStart.setOnClickListener {
             TeamsActivity.start(this)
         }
-        main_button_leaderboards.setOnClickListener {
+        mainButtonLeaderboards.setOnClickListener {
             LeaderboardActivity.start(this)
         }
     }

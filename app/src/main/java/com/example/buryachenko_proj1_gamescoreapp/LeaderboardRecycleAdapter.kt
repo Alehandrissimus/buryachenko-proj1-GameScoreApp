@@ -43,9 +43,9 @@ class LeaderboardRecycleAdapter(
                     itemView.recycleTextViewTeam2Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.red))
                 }
                 score.team1Score < score.team2Score -> {
-                    itemView.recycleTextViewTeam1Tag.text = itemView.resources.getString(R.string.winner)
+                    itemView.recycleTextViewTeam1Tag.text = itemView.resources.getString(R.string.loser)
                     itemView.recycleTextViewTeam1Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.red))
-                    itemView.recycleTextViewTeam2Tag.text = itemView.resources.getString(R.string.loser)
+                    itemView.recycleTextViewTeam2Tag.text = itemView.resources.getString(R.string.winner)
                     itemView.recycleTextViewTeam2Tag.setTextColor(ContextCompat.getColor(itemView.context, R.color.green))
                 }
                 score.team1Score == score.team2Score -> {

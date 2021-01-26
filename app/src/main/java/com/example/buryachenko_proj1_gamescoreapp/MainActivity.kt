@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
         mainButtonLeaderboards.setOnClickListener {
             LeaderboardActivity.start(this)
+            this.finish()
         }
     }
 }

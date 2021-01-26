@@ -20,7 +20,7 @@
     <string name="pause">Pause</string>
     <string name="winner">Winner</string>
     <string name="loser">Loser</string>
-    <string name="tie">tie</string>
+    <string name="tie">Tie</string>
     <string name="leaderboards">Leaderboards</string>
     <string name="game_score_app">Game Score App</string>
 </resources>
